@@ -46,6 +46,34 @@ header{
   background-color: #0abab5;
 }
 
+#list{
+  margin: auto;
+  width: 40vw;
+}
+
+#items{
+  list-style-type: none;
+}
+.item-type{
+  width: 40vw;
+  margin: auto;
+  margin-top: 1vw;
+  padding: 1vw;
+  border-radius: 4vw;
+  background-color: #FFE4E1;
+  font-size: 3vh;
+  color: #0abab5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-type button{
+  border-radius: 4vw;
+  width: 5vw;
+  height: 3vw;
+  border: 0px;
+  background-color: white;
+}
 @media only screen and (max-width: 768px){
 
 #heading{
@@ -70,4 +98,17 @@ header{
   width: 80vw;
 }
 
+#list{
+  width: 90vw;
+}
+.item-type{
+  width: 70vw;
+  padding: 3vw;
+  border-radius: 10vw;
+  margin-top: 4vw;
+}
+
+.item-type button{
+  background-color: #FFE4E1;
+}
 }
