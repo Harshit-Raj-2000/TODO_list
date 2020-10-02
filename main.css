@@ -61,7 +61,7 @@ header{
   padding: 1vw;
   border-radius: 4vw;
   background-color: #FFE4E1;
-  font-size: 3vh;
+  font-size: 4vh;
   color: #0abab5;
   display: flex;
   justify-content: space-between;
@@ -73,6 +73,7 @@ header{
   height: 3vw;
   border: 0px;
   background-color: white;
+  display:none;
 }
 @media only screen and (max-width: 768px){
 
