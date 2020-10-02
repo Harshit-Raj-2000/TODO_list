@@ -4,6 +4,7 @@ let addInput = document.querySelector('#add-item')
 let listArea = document.querySelector('#items')
 let listItem = ""
 let elArray = []
+let search = document.querySelector('#search_list')
 
 document.addEventListener('DOMContentLoaded', () =>{
   if(!localStorage.getItem("elArray")){
@@ -13,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     elArray = JSON.parse(localStorage.getItem("elArray"))
     elArray.forEach(addLi)
   }
-  hoverbutton()
-  deleteItem()
 })
 addButton.addEventListener("click",addFunction)
 
@@ -24,8 +23,6 @@ function addFunction(){
     elArray.push(addInput.value)
     localStorage.setItem("elArray",JSON.stringify(elArray))
     addInput.value = ""
-    hoverbutton();
-    deleteItem();
   }
   else{
     alert("The input field is empty!")
@@ -38,6 +35,8 @@ function addLi(value){
    </li>`
    listArea.innerHTML += el
    idVar = idVar + 1
+   hoverbutton()
+   deleteItem()
 }
 
 function hoverbutton(){
@@ -59,9 +58,24 @@ function deleteItem(){
       let index = parent.id
       elArray.splice(index,1)
       localStorage.setItem("elArray",JSON.stringify(elArray))
-      id = 0
+      idVar = 0
       listArea.innerHTML = ""
       elArray.forEach(addLi)
     })
   })
+}
+
+search.addEventListener('keyup', function (event) {
+      if (event.keyCode === 13) {
+         if(search.value.length > 0){
+           searcher(search.value)
+         }
+        else{
+          alert("The input field is empty!")
+        }
+      }
+   });
+
+function searcher(value){
+  listArea.innerHTML = ""
 }
